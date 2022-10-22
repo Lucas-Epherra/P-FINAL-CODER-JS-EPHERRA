@@ -3,30 +3,46 @@
 
 //variables ( monedas y valor )
 
-let pesoArgentino = 1;
-let dolarOficial = 200;
+
+let peso = 1;
+let dolar = 200;
 let dolarBlue = 300;
-let euroOficial = 210;
+let euro = 210;
 let euroBlue = 310;
 
+// variable para resultado 
 
-function elegirMoneda(val1, val2, val3, val4, val5) {
+let resultado = 0;
 
-    let monedaElegida = prompt("Elija una moneda");
+function elegirMoneda() {
 
-    if (monedaElegida == "")  {
+let monedaElegida = prompt("Elija una moneda");
+    
 
-        alert ("No elegiste un tipo de moneda valido");
+    while (monedaElegida != "ESC") {
 
-    } else {
+        switch (monedaElegida) {
 
-        prompt ("")
+            case dolarBlue:
+                alert("dolarBlue");
+                break;
 
-        val1 = pesoArgentino;
-        val2 = dolarOficial;
-        val3 = dolarBlue;
-        val4 = euroOficial;
-        val5 = euroBlue;
+            case dolar:
+                alert("dolar");
+                break;
+
+            case euroBlue:
+                alert("euroBlue");
+                break;
+
+            case euro:
+                alert("euro");
+                break;
+                
+            default:
+                alert("Elije una divisa valida (dolar,dolarBlue,euro,euroBlue)");
+                break;
+        }
     }
 
 }
