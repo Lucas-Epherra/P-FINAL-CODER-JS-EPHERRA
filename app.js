@@ -3,37 +3,55 @@
 
 //variables ( monedas y valor )
 
-let pesoArgentino = 1;
-let dolarOficial = 200;
-let dolarBlue = 300;
-let euroOficial = 210;
-let euroBlue = 310;
+let peso =1;
+let dolar =200;
+let dolarBlue =300;
+let euro =210;
+let euroBlue =310;
 
+ 
+// funcion para elegir una divisa y ver su valor
 
-function elegirMoneda(val1, val2, val3, val4, val5) {
+function elegirMoneda() { 
 
-    let monedaElegida = prompt("Elija una moneda");
+let monedaElegida = prompt("Elija una moneda (dolar,dolar blue,euro,euro blue)");
 
-    if (monedaElegida == "")  {
+    switch (monedaElegida) {
 
-        alert ("No elegiste un tipo de moneda valido");
+        case "dolar":
+            alert("El valor del dolar oficial es : $" + dolar + " ars");
+             monedaElegida = prompt("Elija una moneda (dolar,dolar blue,euro,euro blue)");
+             break;
 
-    } else {
+        case "dolar blue":
+            alert("El valor del dolar blue es $" + dolarBlue + " ars");
+            monedaElegida = prompt("Elija una moneda (dolar,dolar blue,euro,euro blue)");
+            break;
 
-        prompt ("")
+        case "euro":
+            alert("El valor del euro oficial $" + euro + " ars");
+            monedaElegida = prompt("Elija una moneda (dolar,dolar blue,euro,euro blue)");
+            break;
 
-        val1 = pesoArgentino;
-        val2 = dolarOficial;
-        val3 = dolarBlue;
-        val4 = euroOficial;
-        val5 = euroBlue;
+        case "euro blue":
+            alert("El valor del euro blue $" + euroBlue + " ars");
+            monedaElegida = prompt("Elija una moneda (dolar,dolar blue,euro,euro blue)");
+            break;
+
+        default:
+            alert("Ingrese una moneda valida")
+            monedaElegida = prompt("Elija una moneda valida (dolar,dolar blue,euro,euro blue)");
+            break;
     }
 
-}
+    monedaElegida = prompt("Elija una moneda (dolar,dolar blue,euro,euro blue)");
+ }
 
-elegirMoneda();
+elegirMoneda(); 
 
 
+// funcion para saber a cuanto equivale una divisa de la otra x ejemplo (100 usd blue / 30.000 ars)
+/* 
 function montoIngresado() {
 
     let = parseInt(prompt("Ingrese un monto"));
@@ -41,4 +59,4 @@ function montoIngresado() {
 
 }
 
-montoIngresado();
+montoIngresado(); */
