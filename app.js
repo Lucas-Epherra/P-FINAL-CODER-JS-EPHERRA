@@ -10,7 +10,13 @@ const euro = 250;
 const euroBlue = 350;
 let divisa;
 
-// funcion que verifica si el valor intrudicio es un numero, de lo contrario retorna un error
+let nombreUsuario = prompt("Bienvenido a la calculadora de ahorros,por favor ingrese su nombre");
+
+alert("Hola "+ nombreUsuario +" bienvenido a la calculadora de ahorros" );
+
+alert ("A continuacion podras calcular la equivalencia en divisas extranjeras de tus ahorros en pesos argentinos.");
+
+// funcion que verifica si el valor intrudicio es un numero, de lo contrario retorna un error.
 function verificaValor(valor) {
     if (isNaN(ahorro) || ahorro == null || ahorro == "") {
         console.log('Not a Number!');
@@ -21,19 +27,23 @@ function verificaValor(valor) {
     }
 }
 
+//Funcion que recibe el prompt y da inicio a la funcion de verificacion de arriba.
 function funcionAhorro() {
     ahorro = prompt("Ingrese sus ahorros en pesos (Ingrese valor numerico sin simbolos)");
     a = verificaValor(ahorro);
     return a;
 }
 
+//Funcion flecha para desplegar el menu con las opciones.
 const menu = () => {
-   return ("1=dolar \n 2=dolar blue \n 3=euro \n 4=euro blue \n ingrese el numero correspondiente.")
+   return ("Los nombres de las divisas estan representados por numeros del 1 al 4.\n1 = dolar \n2 = dolar blue \n3 = euro \n4 = euro blue \ningrese el numero correspondiente.")
 }
 
+// variables que actuan en la funcion de leerMoneda.
 let cortarFuncion = true;
 let moneda;
 
+//Funcion que recibe el prompt del menu opcional con un ciclo que no deja avanzar si la opcion es incorrecta.
 function leerMoneda() {
 
     while (cortarFuncion == true) {
@@ -52,8 +62,7 @@ divisaSeleccionada = leerMoneda();
 
 console.log(divisaSeleccionada);
 
-// Algoritmo condicional que asignan un valor a la variable inicializada anteriormente arriba segun la eleccion y muestran la alerta adecuada
-
+// Algoritmo condicional que asignan un valor a la variable inicializada anteriormente arriba segun la eleccion y muestran la alerta adecuada.
 switch (Number(divisaSeleccionada)) {
 
     case 1:
@@ -87,7 +96,7 @@ switch (Number(divisaSeleccionada)) {
 
 let valor = funcionAhorro();
 
-// algoritmo para realizar calculo entre el ahorro en pesos y la divisa extranjera
+// algoritmo condicional para realizar el calculo entre el ahorro en pesos y la divisa extranjera.
 
 if (valor == "error") {
     alert("Error, el numero ingresado es invalido");
