@@ -10,8 +10,8 @@ const euro = 250;
 const euroBlue = 350;
 let divisa;
 
-
-function verificavalor(valor) {
+// funcion que verifica si el valor intrudicio es un numero, de lo contrario retorna un error
+function verificaValor(valor) {
     if (isNaN(ahorro) || ahorro == null || ahorro == "") {
         console.log('Not a Number!');
         return "error";
@@ -22,8 +22,8 @@ function verificavalor(valor) {
 }
 
 function funcionAhorro() {
-    ahorro = prompt("Ingrese sus ahorros en pesos");
-    a = verificavalor(ahorro);
+    ahorro = prompt("Ingrese sus ahorros en pesos (Ingrese valor numerico sin simbolos)");
+    a = verificaValor(ahorro);
     return a;
 }
 
@@ -52,8 +52,6 @@ divisaSeleccionada = leerMoneda();
 
 console.log(divisaSeleccionada);
 
-
-// Variables inicializada para darles valor en el algoritmo de abajo
 // Algoritmo condicional que asignan un valor a la variable inicializada anteriormente arriba segun la eleccion y muestran la alerta adecuada
 
 switch (Number(divisaSeleccionada)) {
@@ -85,12 +83,11 @@ switch (Number(divisaSeleccionada)) {
         divisaSeleccionada = euroBlue;
         divisa = "euros blue"
         break;
-
 } 
 
-
-
 let valor = funcionAhorro();
+
+// algoritmo para realizar calculo entre el ahorro en pesos y la divisa extranjera
 
 if (valor == "error") {
     alert("Error, el numero ingresado es invalido");
