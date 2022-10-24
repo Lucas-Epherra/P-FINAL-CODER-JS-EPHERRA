@@ -14,24 +14,24 @@ let divisa;
 
 
 // funcion para verificar que en ahorro se tipee solo numeros
- function funcionAhorro() {
+  function funcionAhorro() {
 
     let ahorro = (prompt("Ingrese sus ahorros en pesos"));
 
     if (ahorro !== "" || ahorro !== null || ahorro !== NaN) {
         return ahorro
     } else { return 404 }
-}
- 
-numeroInvalido = 404;
+} 
+
+ numeroInvalido = 404;
 
 const menu = () => {
-    ("1=dolar \n 2=dolar blue \n 3=euro \n 4=euro blue \n ingrese el numero correspondiente.")
+   return ("1=dolar \n 2=dolar blue \n 3=euro \n 4=euro blue \n ingrese el numero correspondiente.")
 }
 
 let cortarFuncion = true;
-
- function leerMoneda() {
+let moneda;
+function leerMoneda() {
 
     while (cortarFuncion == true) {
         moneda = prompt(menu());
@@ -43,7 +43,7 @@ let cortarFuncion = true;
             continue;
         }
     }
-} 
+}
 
 
 divisaSeleccionada = leerMoneda();
@@ -98,3 +98,4 @@ if (ahorros == numeroInvalido) {
 } else {
     alert("Sus ahorros son " + ahorros / divisaSeleccionada + " " + divisa);
 }
+ 
