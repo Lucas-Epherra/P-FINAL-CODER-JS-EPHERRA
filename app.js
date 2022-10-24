@@ -1,29 +1,31 @@
-/* CALCULADORA DE AHORRO EN DIVISAS EXTRANJERAS*/
 
-/* a continuacion se realizara un simulador interactivo de un conversor de divisas ( euro, dolar y sus variantes blue) con lo visto hasta la clase 4. */
+/* CALCULADORA DE AHORRO EN DIVISAS EXTRANJERAS/
+
+/ a continuacion se realizara un simulador interactivo de un conversor de divisas ( euro, dolar y sus variantes blue) con lo visto hasta la clase 4. */
 
 //variables ( monedas y valor )
-
 const dolar = 200;
 const dolarBlue = 300;
 const euro = 250;
 const euroBlue = 350;
-
-let numeroInvalido;
 let divisa;
 
 
-// funcion para verificar que en ahorro se tipee solo numeros
-  function funcionAhorro() {
+function verificavalor(valor) {
+    if (isNaN(ahorro) || ahorro == null || ahorro == "") {
+        console.log('Not a Number!');
+        return "error";
+    } else {
+        console.log(ahorro);
+        return ahorro;
+    }
+}
 
-    let ahorro = (prompt("Ingrese sus ahorros en pesos"));
-
-    if (ahorro !== "" || ahorro !== null || ahorro !== NaN) {
-        return ahorro
-    } else { return 404 }
-} 
-
- numeroInvalido = 404;
+function funcionAhorro() {
+    ahorro = prompt("Ingrese sus ahorros en pesos");
+    a = verificavalor(ahorro);
+    return a;
+}
 
 const menu = () => {
    return ("1=dolar \n 2=dolar blue \n 3=euro \n 4=euro blue \n ingrese el numero correspondiente.")
@@ -31,13 +33,14 @@ const menu = () => {
 
 let cortarFuncion = true;
 let moneda;
+
 function leerMoneda() {
 
     while (cortarFuncion == true) {
         moneda = prompt(menu());
         if (moneda < 5 && moneda > 0) {
             cortarFuncion == false;
-            return moneda
+            return moneda;
         } else {
             alert("el valor es incorrecto")
             continue;
@@ -45,12 +48,12 @@ function leerMoneda() {
     }
 }
 
-
 divisaSeleccionada = leerMoneda();
 
 console.log(divisaSeleccionada);
 
 
+// Variables inicializada para darles valor en el algoritmo de abajo
 // Algoritmo condicional que asignan un valor a la variable inicializada anteriormente arriba segun la eleccion y muestran la alerta adecuada
 
 switch (Number(divisaSeleccionada)) {
@@ -85,17 +88,12 @@ switch (Number(divisaSeleccionada)) {
 
 } 
 
-console.log(divisaSeleccionada);
 
 
-console.log(divisa);
-console.log(divisaSeleccionada);
+let valor = funcionAhorro();
 
-let ahorros = funcionAhorro();
-
-if (ahorros == numeroInvalido) {
+if (valor == "error") {
     alert("Error, el numero ingresado es invalido");
 } else {
-    alert("Sus ahorros son " + ahorros / divisaSeleccionada + " " + divisa);
+    alert("Sus ahorros son " + valor / divisaSeleccionada + " " + divisa);
 }
- 
