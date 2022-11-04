@@ -16,7 +16,7 @@ alert("Hola "+ nombreUsuario +" bienvenido a la calculadora de ahorros" );
 
 alert ("A continuacion podras calcular la equivalencia en divisas extranjeras de tus ahorros en pesos argentinos.");
 
-// funcion que verifica si el valor intrudicio es un numero, de lo contrario retorna un error.
+// funcion que verifica si el valor intrudicido es un numero, de lo contrario retorna un error.
 function verificaValor(valor) {
     if (isNaN(ahorro) || ahorro == null || ahorro == "") {
         console.log('Not a Number!');
@@ -105,3 +105,4 @@ if (valor == "error") {
 }
 
 // crear array de objetos y una funcion constructora
+// se creara un usuario y los datos se ingresaran en el objeto
