@@ -103,3 +103,5 @@ if (valor == "error") {
 } else {
     alert("Sus ahorros son " + valor / divisaSeleccionada + " " + divisa);
 }
+
+// crear array de objetos y una funcion constructora
